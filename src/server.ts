@@ -26,7 +26,7 @@ router.get(
 // route Middleware
 app.use(router.routes()).use(router.middleware());
 // Spa
-app.use(async (ctx: Koa.Context) => await send(ctx, 'index.html'));
+app.use(async (ctx: Koa.Context) => send(ctx, 'index.html'));
 // App port
 const PORT = config.get('PORT');
 // Listen for server request
