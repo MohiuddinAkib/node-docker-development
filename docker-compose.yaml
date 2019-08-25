@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  koa_server:
+    container_name: koa-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - .env.dev
+    volumes:
+      - .:/usr/app
+      - node_modules/usr/app/node_modules
+    ports:
+      - 5000:5000
+    expose: [5000]
+    command: yarn dev
+
+volumes:
+  node_modules:
